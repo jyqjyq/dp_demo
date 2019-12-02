@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dapeng.demo.mapper.TaskEMapper">
+
+    <select id="getWorkSituation" resultType="com.dapeng.demo.models.dto.WorkSituationDTO">
+                select (aa.issueTitle || aa.title) openChapters, bb.workTitle workTitle
+                , case when bb.user_id is null then 'false' else 'true' end isHandIn
+                ,COALESCE(bb.level,'0') score, bb.submitHomeworkTime submitHomeworkTime
+        ,case when is_required_job = 1 then 'true' else 'false' end isMustHandIn
+        from
+        (
+        select a.curriculum_id , a.title , a.start_time::date teachingTime, a.course_channel_id, e.title issueTitle, a.is_required_job, a.start_time startTime from ods_live_curriculum a
+        LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+        where a.course_channel_id = #{issueId}
+        and a.curriculum_type = 'OFFICIAL'
+        ) aa
+        left join
+        (
+        select a.task_id ,a.expect, a.section, a.title workTitle, b.user_id, b.level, b.submit submitHomeworkTime from ods_task_e a
+        left join (
+					select oj.task_id, oja.approved_level "level", oj.job_submit_time submit, oj.user_id from ods_ori_jobcompletion oj
+					left join ods_ori_jobcompletion_approved oja on oj.jobcompletion_id = oja.jobcompletion_id where oj.user_id = #{userId}
+				) b on a.task_id = b.task_id
+        where expect = #{issueId}
+        ) bb on aa.curriculum_id = bb.section
+        where bb.task_id is not null
+        order by aa.startTime
+    </select>
+
+    <select id="getWorkSituationBash" resultType="com.dapeng.demo.models.dto.WorkSituationDTO">
+        select (aa.issueTitle || aa.title) openChapters, bb.workTitle workTitle
+        , case when bb.user_id is null then 'false' else 'true' end isHandIn
+        ,COALESCE(bb.level,'0') score, bb.submitHomeworkTime submitHomeworkTime
+        ,case when is_required_job = 1 then 'true' else 'false' end isMustHandIn
+        ,bb.user_id userId
+        from
+        (
+        select a.curriculum_id , a.title , a.start_time::date teachingTime, a.course_channel_id, e.title issueTitle, a.is_required_job, a.start_time startTime from ods_live_curriculum a
+        LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+        where a.course_channel_id = #{issueId}
+        and a.curriculum_type = 'OFFICIAL'
+        ) aa
+        left join
+        (
+        <foreach collection="list" item="obj" separator="union all">
+            select a.task_id ,a.expect, a.section, a.title workTitle, #{obj} user_id , b.level, b.submit submitHomeworkTime from ods_task_e a
+            left join (
+            select oj.task_id, oja.approved_level "level", oj.job_submit_time submit, oj.user_id from ods_ori_jobcompletion oj
+            left join ods_ori_jobcompletion_approved oja on oj.jobcompletion_id = oja.jobcompletion_id where oj.user_id = #{obj}
+            ) b on a.task_id = b.task_id
+            where expect = #{issueId}
+        </foreach>
+        ) bb on aa.curriculum_id = bb.section
+        where bb.task_id is not null
+        order by aa.startTime
+    </select>
+
+    <select id="getWorkSituationByCourse" resultType="com.dapeng.demo.models.dto.WorkSituationCourseDTO">
+        select
+        aa.course_channel_id courseChannelId
+        ,aa.node_time chapterNode
+        ,case when is_required_job = 1 then true else false end isMustHandIn
+        ,case when bb.user_id is null then false else true end isHandIn
+        from
+        (
+        select a.curriculum_id, a.is_required_job, a.course_channel_id, a.start_time, f.node_time from ods_live_curriculum a
+        left join ods_formal_schedule_detail f on a.curriculum_id = f.chapter_id
+        where a.course_id = #{courseId}
+        and a.curriculum_type = 'OFFICIAL'
+        ) aa
+        left join
+        (
+        select a.task_id ,a.expect, a.section, a.title workTitle, b.user_id user_id , b.level, b.submit submitHomeworkTime from ods_task_e a
+        left join (
+        select oj.task_id, oja.approved_level "level", oj.job_submit_time submit, oj.user_id from ods_ori_jobcompletion oj
+        left join ods_ori_jobcompletion_approved oja on oj.jobcompletion_id = oja.jobcompletion_id where oj.user_id = #{studentId}
+        ) b on a.task_id = b.task_id
+        ) bb on aa.curriculum_id = bb.section
+        order by aa.course_channel_id, aa.start_time
+    </select>
+
+    <select id="getSubmitCount" resultType="com.dapeng.demo.models.dto.SubmitCountDTO">
+        select b.user_id userId, count(1) completeWorkCount from ods_task_e a
+        right join
+        (select task_id, approved_level, job_submit_time, user_id from ods_rev_jobcompletion where user_id in  (
+        <foreach collection="list" separator="," item="obj">
+            #{obj}
+        </foreach>
+        )) b on a.task_id = b.task_id
+        where expect = #{issueId}
+        group by b.user_id
+    </select>
+
+    <select id="getSubmitCountBatch" resultType="com.dapeng.demo.models.dto.SubmitCountBatchDTO">
+        select b.user_id userId, count(1) workNumCompleted, expect stageId from ods_task_e a
+        right join
+        (select task_id, approved_level, job_submit_time, user_id from ods_rev_jobcompletion) b on a.task_id = b.task_id
+        where expect in  (
+        <foreach collection="list" separator="," item="obj">
+            #{obj}
+        </foreach>
+        )
+        group by b.user_id,expect
+    </select>
+
+    <select id="getTaskTotal" resultType="com.dapeng.demo.models.dto.TaskTotalDTO">
+        select COALESCE(count(curriculum_id),0) workTotal, COALESCE(sum(case when a.is_required_job = 1 then 1 else 0 end),0) mustHandInWorkTotal from ods_live_curriculum a
+        left join ods_task_e b on a.curriculum_id = b.section
+        where a.course_channel_id = #{issueId}
+        and a.curriculum_type = 'OFFICIAL'
+        and b.task_id is not null
+        group by course_channel_id
+    </select>
+
+    <select id="getUserTaskTotal" resultType="com.dapeng.demo.models.dto.TaskTotalDTO">
+        select COALESCE(count(c.curriculum_id),0) completedWorkCount, COALESCE(sum(case when c.is_required_job = 1 then 1 else 0 end),0) mustHandInCompletedWorkCount from ods_task_e a
+        left join ods_ori_jobcompletion b on a.task_id = b.task_id
+        left join ods_live_curriculum c on c.curriculum_id = a.section
+        where a.expect = #{issueId}
+        and b.user_id = #{studentId}
+    </select>
+
+</mapper>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dapeng.demo.mapper.AuditionCourseMapper">
+
+    <select id="getCourseList" resultType="java.lang.String">
+		SELECT
+			DISTINCT name_and_time courseName 
+		FROM
+			dwd_audition_course_sevenday
+		<where>
+			<if test="date != null">
+			    course_date = #{date}
+			</if>
+			 <if test="college!=null and college!='' ">
+	            and college = #{college}
+	        </if>		
+		</where>
+    </select>
+    
+    <sql id="classCodeFilter">
+			<if test="classCodes != null and classCodes.size() > 0">
+				and class_code in 
+				 <foreach item="classCode" index="index" open="(" separator="," close=")" collection="classCodes">
+		            #{classCode}
+		        </foreach>
+			</if>
+    </sql>
+    
+    <sql id="courseWhereSql">
+    	<where>
+    		<if test="date != null">
+		   and course_date = #{date}
+		</if>
+		
+		<if test="courseName != null and courseName != ''">
+		   and name_and_time = #{courseName}
+		</if>
+    	
+    	</where>
+		
+    </sql>
+    
+    <sql id="courseDetailSortSql">
+		<if test="sortType == null or sortType == ''">
+			order by audition_rec.study_minute desc
+		</if>
+		
+		<if test="sortType == 'MINUTE_DESC'">
+			order by audition_rec.study_minute desc
+		</if>
+		
+		<if test="sortType == 'MINUTE_ASC'">
+			order by audition_rec.study_minute asc
+		</if>
+    </sql>
+    
+    <select id="getSummary"  resultType="com.dapeng.demo.models.dto.AuditionCourseSummaryDTO">
+	    select 
+	    	coalesce((lt5Num + gt5Lt15Num + gt15Lt30Num + gt30Num ),0) total,
+			coalesce(lt5Num,0) lt5Num,
+			coalesce(gt5Lt15Num,0) gt5Lt15Num,
+			coalesce(gt15Lt30Num,0) gt15Lt30Num,
+			coalesce(gt30Num,0) gt30Num
+	    from 
+	    
+	    (
+	    	
+	    	SELECT
+				sum(case watch_time_type when '5分钟及以下' then 1 else 0 end) as lt5Num 
+				,sum(case watch_time_type when '5-15分钟' then 1 else 0 end) as gt5Lt15Num
+				,sum(case watch_time_type when '15-30分钟' then 1 else 0 end) as gt15Lt30Num
+				,sum(case watch_time_type when '30分钟以上' then 1 else 0 end) as gt30Num
+			
+			from 
+			
+			(
+				SELECT 
+					class_code
+					,leader_num
+				FROM
+					ods_zc_chat_group 
+				where 1=1 
+				 <include refid="classCodeFilter"></include>
+			 ) eg
+			 
+			inner join 
+			(
+					SELECT
+					 class_code
+					 ,watch_time_type
+				FROM
+					dwd_audition_course_sevenday rec
+					
+				<include refid="courseWhereSql"></include>
+					
+			) audition_rec on eg.class_code = audition_rec.class_code
+			
+			inner join 
+		
+			dwd_employee_org  staff_info on eg.leader_num = staff_info.employee_num
+			
+	    ) ds	
+    </select>
+    
+    
+    <select id="getAuditionCourseDetails" resultType="com.dapeng.demo.models.dto.AuditionCourseDetailDTO">
+    	SELECT
+			 staff_info.department_name dept
+		    ,audition_rec.con_college college
+			,staff_info.team_name  team
+			,staff_info.group_name "group"
+			,staff_info.employee_num employeeId
+			,staff_info.employee_name consultant
+			,audition_rec.class_code classCode
+			,audition_rec.course_name courseName
+			,audition_rec.username studentName
+			,audition_rec.mobile mobile
+			,audition_rec.audition_begin_time auditionBeginTime
+			,audition_rec.study_minute "minute"
+			,audition_rec.watch_time_type minuteRender
+			,audition_rec.zc_user_chat_type flowType
+			,audition_rec.zc_user_chat_code flowAccount
+			,audition_rec.dapeng_num dapengNum
+		from 
+		
+		(
+			SELECT 
+				class_code
+				,leader_num
+			FROM
+				ods_zc_chat_group 
+			where 1=1 
+			 <include refid="classCodeFilter"></include>
+		 ) eg
+		 
+		inner join 
+		(
+				SELECT
+				 *
+			FROM
+				dwd_audition_course_sevenday rec
+			<include refid="courseWhereSql"></include>
+				
+		) audition_rec on eg.class_code = audition_rec.class_code
+		
+		inner join 
+		
+		dwd_employee_org  staff_info on eg.leader_num = staff_info.employee_num
+		
+		<include refid="courseDetailSortSql"></include>
+		
+    </select>
+
+
+
+
+
+	<select id="getCourseAndIssue" resultType="com.dapeng.demo.models.dto.CourseAndIssueDTO">
+		select a.title issueTitle, b.title courseTitle from ods_course_channel a left join ods_course b on a.course_id = b.course_id
+		where a.id = #{issueId}
+	</select>
+
+	<select id="getListenSituation" resultType="com.dapeng.demo.models.dto.ListenSituationDTO">
+		select (aa.issueTitle || aa.openChapters) openChapters, aa.teachingTime, COALESCE(bba.courseDuration,0) courseDuration, COALESCE(bb.liveDuration,0) liveDuration, COALESCE(cc.playBackDuration,0) playBackDuration from
+		(
+		select a.title openChapters, a.start_time::date teachingTime, e.title issueTitle, a.start_time startTime from ods_live_curriculum a
+		LEFT JOIN ods_course b ON a.course_id = b.course_id
+		LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+		where a.course_channel_id = #{issueId}
+		and a.curriculum_type = 'OFFICIAL'
+		) aa
+		left join
+				(
+		select b.node_name openChapters, date(b.begin_date) teachingTime, (b.duration::int * 60) courseDuration from ods_formal_schedule_master a
+		left join ods_formal_schedule_detail b on a.excelserverrcid = b.excelserverrcid
+		where period_id = #{issueId}
+		) bba on aa.openChapters = bba.openChapters and aa.teachingTime = bba.teachingTime
+		left join
+		(
+		select a.course_section_name openChapters, a.formal_course_date teachingTime,
+		sum(b.study_minute*60) liveDuration
+		from ods_formal_course_master a left join ods_formal_course_detail b on a.excelserverrcid = b.excelserverrcid
+		where a.formal_course_name = #{courseName} and a.semester_num = #{issueName} and b.user_id = #{userId}
+		group by a.formal_course_name, a.formal_course_date, a.course_section_name
+		) bb on aa.openChapters = bb.openChapters and aa.teachingTime = bb.teachingTime
+		left join
+		(
+		select chapter_name openChapters, course_date::date teachingTime, sum(COALESCE(minute::int * 60,0)) playBackDuration from ods_live_playback
+		where course = #{courseName} and term = #{issueName} and user_id = #{userId}
+		group by course, course_date::date, chapter_name
+		) cc on aa.openChapters = cc.openChapters and aa.teachingTime = cc.teachingTime
+		order by aa.startTime
+	</select>
+
+	<select id="getIssueAuditionTime" resultType="com.dapeng.demo.models.dto.IssueAuditionTimeDTO">
+		select
+		COALESCE(sum(COALESCE(liveDurationTotal,0)),0) liveDurationTotal
+		,COALESCE(sum(COALESCE(playBackDurationTotal,0)),0) playBackDurationTotal
+		from
+		(
+		select a.title openChapters, a.start_time::date teachingTime, e.title issueTitle from ods_live_curriculum a
+		LEFT JOIN ods_course b ON a.course_id = b.course_id
+		LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+		where a.course_channel_id = #{issueId}
+		and a.curriculum_type = 'OFFICIAL'
+		) aa
+		left join
+		(
+		select a.course_section_name openChapters, a.formal_course_date teachingTime,
+		sum(	( COALESCE(substr(b.study_time, 1, 2)::int,0)*3600 +
+		COALESCE(substr(b.study_time, 4, 2)::int,0)*60 +
+		COALESCE(substr(b.study_time, 7, 2)::int,0)
+		)::numeric) liveDurationTotal
+		from ods_formal_course_master a left join ods_formal_course_detail b on a.excelserverrcid = b.excelserverrcid
+		where a.formal_course_name = #{courseName} and a.semester_num = #{issueName} and b.user_id =  #{userId}
+		group by a.formal_course_name, a.formal_course_date, a.course_section_name
+		) bb on aa.openChapters = bb.openChapters and aa.teachingTime = bb.teachingTime
+		left join
+		(
+		select chapter_name openChapters, course_date::date teachingTime,
+		sum(( COALESCE(substr(watch_time, 1, 2)::int,0)*3600 +
+		COALESCE(substr(watch_time, 4, 2)::int,0)*60 +
+		COALESCE(substr(watch_time, 7, 2)::int,0)
+		)::numeric) playBackDurationTotal from ods_live_playback
+		where course = #{courseName} and term = #{issueName} and user_id =  #{userId}
+		group by course, course_date::date, chapter_name
+		) cc on aa.openChapters = cc.openChapters and aa.teachingTime = cc.teachingTime
+	</select>
+
+	<select id="getIssueAuditionCount" resultType="com.dapeng.demo.models.dto.IssueAuditionCountDTO">
+		select aa.user_id studentId, COALESCE(bb.issueAuditionCount,0) issueAuditionCount from (
+		select user_id from ods_user where user_id in(
+		<foreach collection="list" separator="," item="obj">
+		#{obj}
+		</foreach>
+		)
+		group by user_id
+		) aa
+		left join
+		(
+		select count(DISTINCT f.excelserverrcid) issueAuditionCount, g.user_id studentId
+		from ods_live_curriculum a
+		LEFT JOIN ods_course b ON a.course_id = b.course_id
+		LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+		left join ods_formal_course_master f on f.course_section_name = a.title
+		and f.formal_course_date =  a.start_time::date and f.semester_num = e.title
+		and f.formal_course_name = b.title
+		left join ods_formal_course_detail g on f.excelserverrcid = g.excelserverrcid
+		where a.course_channel_id = #{issueId}
+		and a.curriculum_type = 'OFFICIAL'
+		group by  g.user_id
+		) bb on aa.user_id = bb.studentId
+	</select>
+
+	<select id="getIssueAuditionCountBatch" resultType="com.dapeng.demo.models.dto.IssueAuditionCountBatchDTO">
+		select count(DISTINCT f.excelserverrcid) chapterNumListened, g.user_id userId, a.course_channel_id stageId
+		from ods_live_curriculum a
+		LEFT JOIN ods_course b ON a.course_id = b.course_id
+		LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+		left join ods_formal_course_master f on f.course_section_name = a.title
+		and f.formal_course_date =  a.start_time::date and f.semester_num = e.title
+		and f.formal_course_name = b.title
+		left join ods_formal_course_detail g on f.excelserverrcid = g.excelserverrcid
+		where a.course_channel_id in(
+		<foreach collection="list" separator="," item="obj">
+			#{obj}
+		</foreach>
+		)
+		and a.curriculum_type = 'OFFICIAL'
+		group by  g.user_id, a.course_channel_id
+	</select>
+
+	<select id="getListenSituationTotal" resultType="com.dapeng.demo.models.dto.ListenSituationTotalDTO">
+		select
+		COALESCE(count(aa.openChapters),0) chapterTotal, COALESCE(sum(bb.courseDuration),0) liveDurationTotal
+		from
+		(
+		select a.title openChapters, a.start_time::date teachingTime from ods_live_curriculum a
+		where a.course_channel_id = #{issueId}
+		and a.curriculum_type = 'OFFICIAL'
+		) aa left join
+		(
+				select b.node_name openChapters, date(b.begin_date) teachingTime, (b.duration::int * 60) courseDuration from ods_formal_schedule_master a
+left join ods_formal_schedule_detail b on a.excelserverrcid = b.excelserverrcid
+where period_id = #{issueId}
+		) bb on aa.openChapters = bb.openChapters and aa.teachingTime = bb.teachingTime
+	</select>
+
+	<select id="getUserListenSituationTotal" resultType="com.dapeng.demo.models.dto.ListenSituationTotalDTO">
+		select
+		COALESCE(count(DISTINCT aa.openChapters),0) chapterListenedCount, COALESCE(sum(bb.liveDuration),0) liveDurationListened
+		from
+		(
+		select a.title openChapters, a.start_time::date teachingTime from ods_live_curriculum a
+		LEFT JOIN ods_course b ON a.course_id = b.course_id
+		LEFT JOIN ods_course_channel e ON  a.course_channel_id = e.id
+		left join ods_formal_course_master f on f.course_section_name = a.title
+		and f.formal_course_date =  a.start_time::date and f.semester_num = e.title
+		and f.formal_course_name = b.title
+		left join ods_formal_course_detail g on f.excelserverrcid = g.excelserverrcid
+		where a.course_channel_id = #{issueId}
+		and g.user_id = #{userId}
+		and a.curriculum_type = 'OFFICIAL'
+		group by a.title, a.start_time::date, g.user_id
+		) aa left join
+		(
+		select a.course_section_name openChapters, a.formal_course_date teachingTime ,( COALESCE(substr(b.study_time, 1, 2)::int,0)*3600 +
+		COALESCE(substr(b.study_time, 4, 2)::int,0)*60 +
+		COALESCE(substr(b.study_time, 7, 2)::int,0)
+		)::numeric liveDuration
+		from ods_formal_course_master a
+		left join ods_formal_course_detail b on a.excelserverrcid = b.excelserverrcid
+		where a.formal_course_name = #{courseName} and a.semester_num = #{issueName} and b.user_id = #{userId}
+		) bb on aa.openChapters = bb.openChapters and aa.teachingTime = bb.teachingTime
+	</select>
+
+</mapper>

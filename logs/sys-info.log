@@ -1,0 +1,238 @@
+10:42:02.217 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 7516 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+10:42:02.222 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+10:42:07.127 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+10:42:07.129 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:42:07.130 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+10:42:07.291 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:42:08.901 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+10:42:09.869 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+10:42:09.903 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+10:42:09.978 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+10:42:10.561 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+10:42:10.614 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 9.658 seconds (JVM running for 11.158)
+10:42:31.761 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:42:36.667 [http-nio-8080-exec-8] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+10:42:36.684 [http-nio-8080-exec-8] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+10:43:19.561 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 11236 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+10:43:19.569 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+10:43:23.701 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+10:43:23.702 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:43:23.703 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+10:43:23.842 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:43:25.136 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+10:43:26.026 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+10:43:26.054 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+10:43:26.107 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+10:43:26.635 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+10:43:26.682 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.224 seconds (JVM running for 9.531)
+10:43:45.487 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:43:49.473 [http-nio-8080-exec-2] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+10:43:49.489 [http-nio-8080-exec-2] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+10:44:22.325 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 6716 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+10:44:22.330 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+10:44:27.019 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+10:44:27.021 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:44:27.021 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+10:44:27.152 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:44:28.514 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+10:44:29.369 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+10:44:29.405 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+10:44:29.482 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+10:44:30.206 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+10:44:30.256 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 9.009 seconds (JVM running for 10.659)
+10:45:10.418 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 3648 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+10:45:10.424 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+10:45:14.697 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+10:45:14.703 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:45:14.704 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+10:45:14.898 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:45:15.319 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+10:45:16.075 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,928] - {dataSource-1} inited
+10:45:17.552 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+10:45:18.301 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+10:45:18.328 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+10:45:18.385 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+10:45:18.907 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+10:45:18.958 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 9.559 seconds (JVM running for 10.757)
+10:45:23.880 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:45:27.759 [http-nio-8080-exec-4] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+10:45:27.776 [http-nio-8080-exec-4] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:14:20.329 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,1823] - {dataSource-1} closed
+11:14:27.418 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 6724 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:14:27.424 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:14:31.826 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:14:31.827 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:14:31.827 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:14:31.973 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:14:32.233 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:14:32.732 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,928] - {dataSource-1} inited
+11:14:33.757 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:14:34.536 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:14:34.566 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:14:34.623 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:14:35.263 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:14:35.329 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.82 seconds (JVM running for 10.197)
+11:14:42.697 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:14:52.279 [http-nio-8080-exec-6] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:14:52.297 [http-nio-8080-exec-6] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:15:57.459 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,1823] - {dataSource-1} closed
+11:16:02.716 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 9876 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:16:02.725 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:16:06.376 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:16:06.378 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:16:06.378 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:16:06.510 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:16:06.751 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:16:07.250 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,928] - {dataSource-1} inited
+11:16:08.238 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:16:08.946 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:16:08.977 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:16:09.042 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:16:09.728 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:16:09.789 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.074 seconds (JVM running for 9.283)
+11:16:16.067 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:16:20.902 [http-nio-8080-exec-3] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:16:20.914 [http-nio-8080-exec-3] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:17:02.516 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,1823] - {dataSource-1} closed
+11:17:07.712 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 2004 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:17:07.718 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:17:11.751 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:17:11.752 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:17:11.753 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:17:11.891 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:17:12.273 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:17:12.837 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,928] - {dataSource-1} inited
+11:17:14.112 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:17:14.872 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:17:14.904 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:17:14.955 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:17:15.524 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:17:15.583 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.889 seconds (JVM running for 10.09)
+11:17:22.497 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:17:26.897 [http-nio-8080-exec-10] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:17:26.911 [http-nio-8080-exec-10] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:17:56.414 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,1823] - {dataSource-1} closed
+11:18:03.320 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 9024 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:18:03.348 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:18:07.310 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:18:07.312 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:18:07.313 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:18:07.457 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:18:08.798 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:18:09.807 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:18:09.855 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:18:09.935 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:18:10.513 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:18:10.567 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.217 seconds (JVM running for 9.395)
+11:18:12.369 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:18:16.467 [http-nio-8080-exec-9] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:18:16.483 [http-nio-8080-exec-9] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:30:01.281 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 3588 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:30:01.285 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:30:04.930 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:30:04.931 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:30:04.931 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:30:05.080 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:30:06.584 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:30:07.377 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:30:07.410 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:30:07.469 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:30:07.942 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:30:08.005 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 7.494 seconds (JVM running for 8.804)
+11:31:07.529 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:31:11.282 [http-nio-8080-exec-1] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:31:11.299 [http-nio-8080-exec-1] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:32:22.003 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 10752 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:32:22.038 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:32:25.891 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:32:25.892 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:32:25.893 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:32:26.047 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:32:27.591 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:32:28.370 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:32:28.402 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:32:28.455 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:32:28.942 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:32:28.996 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 8.04 seconds (JVM running for 9.234)
+11:32:36.493 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:32:40.329 [http-nio-8080-exec-7] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:32:40.347 [http-nio-8080-exec-7] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:33:36.091 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 10616 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:33:36.097 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:33:39.817 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:33:39.818 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:33:39.818 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:33:39.946 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:33:41.558 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:33:42.380 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:33:42.410 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:33:42.467 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:33:42.972 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:33:43.021 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 7.981 seconds (JVM running for 9.216)
+11:33:59.235 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:34:03.663 [http-nio-8080-exec-8] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:34:03.683 [http-nio-8080-exec-8] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:34:36.203 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 9452 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:34:36.207 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:34:40.142 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:34:40.144 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:34:40.144 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:34:40.272 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:34:40.599 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:34:40.812 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+11:35:31.480 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 9096 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:35:31.485 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:35:35.309 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:35:35.311 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:35:35.311 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:35:35.456 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:35:35.789 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:35:36.049 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+11:37:16.786 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 3372 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:37:16.790 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:37:20.360 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:37:20.361 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:37:20.362 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:37:20.491 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:37:20.773 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:37:21.009 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+11:44:54.283 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 6800 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:44:54.287 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:44:57.752 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:44:57.753 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:44:57.754 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:44:57.905 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:44:58.258 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+11:44:58.460 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+11:45:22.111 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 32 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:45:22.116 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:45:25.809 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:45:25.810 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:45:25.811 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:45:25.926 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:45:27.334 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:45:28.116 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:45:28.142 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:45:28.184 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:45:28.629 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:45:28.668 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 7.317 seconds (JVM running for 8.282)
+11:45:38.605 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:45:43.173 [http-nio-8080-exec-6] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:45:43.188 [http-nio-8080-exec-6] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:47:34.531 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarting,55] - Starting InterfaceManageApplication on PC-201910172135 with PID 2092 (E:\work\dp\interfaceManage\interfaceManage\target\classes started by Administrator in E:\work\dp\interfaceManage\interfaceManage)
+11:47:34.536 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStartupProfileInfo,655] - The following profiles are active: dev
+11:47:37.999 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+11:47:38.001 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:47:38.001 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.27]
+11:47:38.127 [restartedMain] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:47:39.549 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+11:47:40.321 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,147] - Context refreshed
+11:47:40.343 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,150] - Found 1 custom documentation plugin(s)
+11:47:40.396 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+11:47:40.831 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+11:47:40.869 [restartedMain] INFO  c.d.d.InterfaceManageApplication - [logStarted,61] - Started InterfaceManageApplication in 7.062 seconds (JVM running for 8.011)
+11:47:51.799 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/interfaceManage] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:47:56.154 [http-nio-8080-exec-9] INFO  c.d.d.c.ZcAuditionController - [getCourseList,57] - getCourseList param:{"date":"2019-04-15","college":"设计学院"}
+11:47:56.168 [http-nio-8080-exec-9] INFO  c.d.d.a.DataSourceAspect - [doBefore,28] - 选择数据源---db1
+11:47:56.261 [http-nio-8080-exec-9] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariPool-1 - Starting...
+11:47:56.430 [http-nio-8080-exec-9] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariPool-1 - Start completed.
